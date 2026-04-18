@@ -106,7 +106,10 @@ const ClassifyKolam: React.FC = () => {
       const formData = new FormData();
       formData.append("file", selectedFile);
       
-      const response = await fetch("http://localhost:8000/predict", {
+      const API_URL = import.meta.env.PROD 
+        ? "https://omkar-prabhu-aparnabindu.hf.space/predict"
+        : "http://localhost:8000/predict";
+      const response = await fetch(API_URL, {
         method: "POST",
         body: formData,
       });
