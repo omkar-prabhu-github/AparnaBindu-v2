@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Background from './Background';
 import { Header } from './header';
 import { Footer } from './footer';
-import { Trophy, Network, Microscope, Code, LayoutDashboard, BrainCircuit, UploadCloud, Server, Database } from 'lucide-react';
+import { Trophy, Code, LayoutDashboard, BrainCircuit, UploadCloud, Server } from 'lucide-react';
 
 const About: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);

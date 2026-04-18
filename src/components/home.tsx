@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Shapes, DraftingCompass, Clock, Users, Heart, Brush, ChevronRight } from 'lucide-react';
+import { Shapes, DraftingCompass, Clock, Users, Heart, ChevronRight } from 'lucide-react';
 import { Header } from './header';
 import { Footer } from './footer';
 import Background from './Background';

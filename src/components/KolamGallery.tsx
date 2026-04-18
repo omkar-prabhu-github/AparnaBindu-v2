@@ -26,7 +26,7 @@ interface KolamCardProps {
 
 const kolamData: KolamData[] = kolamDataJson as KolamData[];
 
-const KolamCard: React.FC<KolamCardProps> = ({ type, imageUrl, index, href = '#', description }) => {
+const KolamCard: React.FC<KolamCardProps> = ({ type, imageUrl, index, href = '#' }) => {
   return (
     <motion.div
       className="relative group col-span-1 h-64"
