@@ -161,13 +161,13 @@ const ClassifyKolam: React.FC = () => {
           </div>
         )}
         
-        <main className="container mx-auto px-6 md:px-10 py-12 md:py-20 flex-grow flex flex-col">
+        <main className="container mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 md:py-20 flex-grow flex flex-col">
           {/* Header Title */}
-          <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="text-center mb-8 sm:mb-16 max-w-3xl mx-auto">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold font-serif text-amber-950 mb-6 drop-shadow-sm"
+              className="text-3xl sm:text-5xl md:text-6xl font-bold font-serif text-amber-950 mb-4 sm:mb-6 drop-shadow-sm"
             >
               Analyze Your Kolam
             </motion.h1>
@@ -175,17 +175,17 @@ const ClassifyKolam: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-amber-800/80 font-medium"
+              className="text-base sm:text-xl text-amber-800/80 font-medium"
             >
               Discover the ancient lineage and mathematical beauty of your designs using cutting-edge vision models.
             </motion.p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-10 w-full max-w-7xl mx-auto flex-grow items-stretch">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-10 w-full max-w-7xl mx-auto flex-grow items-stretch">
             
             {/* Left Box: Upload & Preview */}
             <motion.div 
-              className="flex-1 flex flex-col bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10 relative overflow-hidden"
+              className="flex-1 flex flex-col bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10 relative overflow-hidden"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
             >
@@ -288,7 +288,7 @@ const ClassifyKolam: React.FC = () => {
 
             {/* Right Box: Results */}
             <motion.div 
-              className="flex-[1.2] flex flex-col bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10"
+              className="flex-[1.2] flex flex-col bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
             >
@@ -358,7 +358,7 @@ const ClassifyKolam: React.FC = () => {
                       className="flex flex-col h-full"
                     >
                       {/* Highlight result */}
-                      <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200 mb-8 flex items-start gap-6 relative overflow-hidden">
+                      <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-amber-200 mb-6 sm:mb-8 flex items-start gap-3 sm:gap-6 relative overflow-hidden">
                         <div className="absolute right-0 top-0 opacity-10 transform translate-x-1/3 -translate-y-1/3 pointer-events-none">
                           <Target size={160} />
                         </div>
@@ -367,7 +367,7 @@ const ClassifyKolam: React.FC = () => {
                         </div>
                         <div className="relative z-10">
                           <p className="text-sm font-bold text-amber-600 uppercase tracking-widest mb-1">Identified Tradition</p>
-                          <h3 className="text-4xl font-black text-amber-950 font-serif leading-tight">{label}</h3>
+                          <h3 className="text-2xl sm:text-4xl font-black text-amber-950 font-serif leading-tight">{label}</h3>
                         </div>
                       </div>
 

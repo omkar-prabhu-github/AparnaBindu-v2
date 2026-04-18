@@ -372,13 +372,13 @@ const KolamDesigner: React.FC = () => {
           </div>
         )}
 
-        <main className="container mx-auto px-6 md:px-10 py-12 md:py-20 flex-grow flex flex-col">
+        <main className="container mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 md:py-20 flex-grow flex flex-col">
           {/* Header Title */}
-          <div className="text-center mb-16 max-w-3xl mx-auto relative flex flex-col items-center">
-            <h1 className="text-5xl md:text-6xl font-bold font-serif text-amber-950 mb-6 drop-shadow-sm">
+          <div className="text-center mb-8 sm:mb-16 max-w-3xl mx-auto relative flex flex-col items-center">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-serif text-amber-950 mb-4 sm:mb-6 drop-shadow-sm">
               Design a Kolam
             </h1>
-            <p className="text-xl text-amber-800/80 font-medium mb-6">
+            <p className="text-base sm:text-xl text-amber-800/80 font-medium mb-4 sm:mb-6">
               Create your own geometric patterns using structural hex codes and witness the beauty unfolds.
             </p>
             <button 
@@ -391,36 +391,36 @@ const KolamDesigner: React.FC = () => {
 
           {/* Help Modal */}
           {showHelp && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-amber-950/40 backdrop-blur-sm">
-              <div className="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative border border-amber-200 animate-slideDown">
-                <button onClick={() => setShowHelp(false)} className="absolute top-4 right-4 text-amber-400 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-full p-1 transition-colors">
-                  <X size={24} />
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-amber-950/40 backdrop-blur-sm">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-2xl w-full shadow-2xl relative border border-amber-200 max-h-[85vh] overflow-y-auto">
+                <button onClick={() => setShowHelp(false)} className="absolute top-3 right-3 sm:top-4 sm:right-4 text-amber-400 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-full p-1 transition-colors z-10">
+                  <X size={20} />
                 </button>
-                <h3 className="text-3xl font-bold font-serif text-amber-950 mb-4 pr-10">How Kolam Hex Codes Work</h3>
-                <div className="space-y-4 text-amber-900 border-t border-amber-100 pt-4 leading-relaxed">
-                  <p className="text-lg">This designer uses hexadecimal characters to precisely program the geometry of intersections between the dots.</p>
-                  <ul className="list-disc pl-6 space-y-2 marker:text-amber-500">
-                    <li><strong>1-5-1 Kolam (Small):</strong> Requires a max <strong>4-character</strong> hex code (e.g., <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono text-amber-800">F0F0</code>). Consists of 4 diamond pattern sections.</li>
-                    <li><strong>1-7-1 Kolam (Large):</strong> Requires a max <strong>9-character</strong> hex code (e.g., <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono text-amber-800">A5A5A5A5A</code>). Consists of 9 diamond pattern sections.</li>
+                <h3 className="text-xl sm:text-3xl font-bold font-serif text-amber-950 mb-3 sm:mb-4 pr-10">How Kolam Hex Codes Work</h3>
+                <div className="space-y-3 sm:space-y-4 text-amber-900 border-t border-amber-100 pt-3 sm:pt-4 leading-relaxed text-sm sm:text-base">
+                  <p>This designer uses hexadecimal characters to program the geometry of intersections between the dots.</p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 marker:text-amber-500">
+                    <li><strong>1-5-1 Kolam (Small):</strong> Max <strong>4-character</strong> hex code (e.g., <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono text-amber-800 text-xs sm:text-sm">F0F0</code>). 4 diamond sections.</li>
+                    <li><strong>1-7-1 Kolam (Large):</strong> Max <strong>9-character</strong> hex code (e.g., <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono text-amber-800 text-xs sm:text-sm">A5A5A5A5A</code>). 9 diamond sections.</li>
                   </ul>
-                  <p>Each hex character (`0`-`9`, `A`-`F`) is converted into a 4-bit binary group (e.g. `F` becomes `1111`). Each bit controls one intersection point around a central diamond (Top, Right, Left, Bottom) in the design:</p>
-                  <ul className="list-disc pl-6 space-y-2 marker:text-amber-500">
-                    <li><code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono font-bold text-amber-800 text-sm">1</code> : Renders a straight cross connection.</li>
-                    <li><code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono font-bold text-amber-800 text-sm">0</code> : Renders a continuous curving loop.</li>
+                  <p>Each hex character (<code className="text-xs">0-F</code>) converts to 4 binary bits. Each bit controls one intersection (Top, Right, Left, Bottom):</p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 marker:text-amber-500">
+                    <li><code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono font-bold text-amber-800 text-xs sm:text-sm">1</code> : Straight cross connection.</li>
+                    <li><code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono font-bold text-amber-800 text-xs sm:text-sm">0</code> : Continuous curving loop.</li>
                   </ul>
-                  <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-5 rounded-xl border border-amber-200 mt-6 shadow-inner">
-                    <strong className="block mb-2 text-amber-950">💡 Pro Tips:</strong> 
-                    <span className="text-amber-800 text-sm">Use all zeros to create a purely curved canonical Kolam, or all <code className="font-bold">F</code>s for a completely sharp diagonal structure. Experiment to find your perfect symmetry!</span>
+                  <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-3 sm:p-5 rounded-xl border border-amber-200 mt-4 sm:mt-6 shadow-inner">
+                    <strong className="block mb-1 sm:mb-2 text-amber-950 text-sm sm:text-base">💡 Pro Tips:</strong> 
+                    <span className="text-amber-800 text-xs sm:text-sm">Use all zeros for a purely curved Kolam, or all <code className="font-bold">F</code>s for a sharp diagonal structure.</span>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-10 w-full max-w-7xl mx-auto flex-grow">
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6 sm:gap-10 w-full max-w-7xl mx-auto flex-grow">
             {/* 1-5-1 Kolam Designer */}
-            <div className="flex-1 flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10">
-              <h2 className="text-3xl font-bold text-center text-amber-950 font-serif">1-5-1 Kolam</h2>
+            <div className="flex-1 flex flex-col items-center gap-4 sm:gap-6 p-4 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-amber-950 font-serif">1-5-1 Kolam</h2>
               <div className="flex flex-col items-center w-full max-w-xs gap-4">
                 <input
                   type="text"
@@ -443,8 +443,8 @@ const KolamDesigner: React.FC = () => {
             </div>
 
             {/* 1-7-1 Kolam Designer */}
-            <div className="flex-1 flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10">
-              <h2 className="text-3xl font-bold text-center text-amber-950 font-serif">1-7-1 Kolam</h2>
+            <div className="flex-1 flex flex-col items-center gap-4 sm:gap-6 p-4 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-amber-900/10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-amber-950 font-serif">1-7-1 Kolam</h2>
               <div className="flex flex-col items-center w-full max-w-xs gap-4">
                 <input
                   type="text"

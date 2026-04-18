@@ -103,7 +103,7 @@ const KolamGallery: React.FC = () => {
         {/* Main Content */}
         <main className="container mx-auto px-4 sm:px-6 md:px-10 pt-16 md:pt-24 pb-24 flex-grow">
           {/* Enhanced Hero Section */}
-          <section className="pb-16 text-center relative max-w-4xl mx-auto">
+          <section className="pb-8 sm:pb-16 text-center relative max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -111,11 +111,11 @@ const KolamGallery: React.FC = () => {
               className="relative z-10"
             >
 
-              <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-800 via-orange-700 to-red-800 tracking-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold font-serif mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-800 via-orange-700 to-red-800 tracking-tight">
                 Kolam Gallery
               </h1>
               
-              <p className="text-xl md:text-2xl text-amber-700/90 mb-10 leading-relaxed font-medium">
+              <p className="text-base sm:text-xl md:text-2xl text-amber-700/90 mb-6 sm:mb-10 leading-relaxed font-medium">
                 A vibrant collection of traditional and contemporary Kolam designs celebrating the rich floor art heritage of South India.
               </p>
               

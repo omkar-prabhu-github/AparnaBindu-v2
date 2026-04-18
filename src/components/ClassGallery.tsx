@@ -75,7 +75,7 @@ const ClassGallery: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <h1 className="text-4xl md:text-6xl font-bold font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-900 via-orange-800 to-red-900">
+                <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-900 via-orange-800 to-red-900">
                   {formattedTitle}
                 </h1>
                 <p className="text-amber-700 mt-3 font-medium text-lg border-l-4 border-amber-400 pl-3">

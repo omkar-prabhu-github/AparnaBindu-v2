@@ -41,13 +41,13 @@ interface KolamCardProps {
 const KolamCard: React.FC<KolamCardProps> = ({ type, icon: Icon, description, link }) => {
   return (
     <Link to={link} className="block group">
-      <div className="relative rounded-2xl overflow-hidden shadow-lg h-full border border-transparent bg-gradient-to-br from-orange-100 via-orange-100 to-orange-200 text-amber-900 p-8 flex flex-col transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+      <div className="relative rounded-2xl overflow-hidden shadow-lg h-full border border-transparent bg-gradient-to-br from-orange-100 via-orange-100 to-orange-200 text-amber-900 p-5 sm:p-8 flex flex-col transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative z-10 flex-grow flex flex-col">
           <div className="mb-6">
-            <Icon className="w-16 h-16 text-amber-700 group-hover:text-amber-900 transition-colors duration-300" />
+            <Icon className="w-10 h-10 sm:w-16 sm:h-16 text-amber-700 group-hover:text-amber-900 transition-colors duration-300" />
           </div>
-          <h3 className="text-3xl font-bold mb-3">{type}</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3">{type}</h3>
           <p className="text-amber-800 leading-relaxed mb-6 flex-grow">{description}</p>
           <div className="mt-auto flex items-center justify-between font-semibold">
             <span>Explore Feature</span>
@@ -131,15 +131,15 @@ const Home = () => {
         )}
 
         {/* Main Content */}
-        <main className="container mx-auto px-6 md:px-10 flex-grow pb-16">
-            <section className="pt-20 pb-6 text-center">
+        <main className="container mx-auto px-4 sm:px-6 md:px-10 flex-grow pb-16">
+            <section className="pt-12 sm:pt-20 pb-6 text-center">
               <div className="max-w-4xl mx-auto">
                 
-                <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 text-amber-900">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold font-serif mb-4 sm:mb-6 text-amber-900">
                   Welcome to the World of Kolam
                 </h1>
                 
-                <p className="text-2xl text-amber-700 mb-10 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-base sm:text-xl md:text-2xl text-amber-700 mb-6 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
                   Immerse yourself in the timeless beauty of South Indian floor art. 
                   Learn, create, and preserve this sacred tradition that connects us to our heritage.
                 </p>
@@ -148,14 +148,14 @@ const Home = () => {
             {/* Featured Kolams */}
             <section className="pt-0 pb-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold font-serif text-amber-900 mb-4">
+                <h2 className="text-2xl sm:text-4xl font-bold font-serif text-amber-900 mb-4">
                   Explore Our Features
                 </h2>
                 {/* Animated divider */}
                 <div className="w-24 h-1 mx-auto bg-gradient-to-r from-amber-400 to-orange-400 rounded-full section-divider"></div>
               </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 max-w-5xl mx-auto">
               {featuredKolams.map((kolam) => (
                 <KolamCard key={kolam.id} {...kolam} />
               ))}
@@ -164,14 +164,14 @@ const Home = () => {
 
           {/* Stats Section moved below feature cards */}
           <section className="py-12 border-y border-amber-200/30">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-8 h-8 text-amber-700 icon-animate" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-16 sm:h-16 mb-2 sm:mb-4 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-5 h-5 sm:w-8 sm:h-8 text-amber-700 icon-animate" />
                   </div>
-                  <h3 className="text-3xl font-bold text-amber-900 mb-2">{stat.value}</h3>
-                  <p className="text-amber-600">{stat.label}</p>
+                  <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-amber-900 mb-1 sm:mb-2">{stat.value}</h3>
+                  <p className="text-xs sm:text-base text-amber-600">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -179,14 +179,14 @@ const Home = () => {
 
           {/* History Section */}
           <section className="py-20">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-10 md:p-16 shadow-2xl border border-amber-200/30 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-16 shadow-2xl border border-amber-200/30 relative overflow-hidden">
               {/* Decorative Background */}
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-amber-200/20 to-orange-200/20 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-orange-200/20 to-amber-200/20 rounded-full blur-3xl"></div>
               
               <div className="relative z-10">
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold font-serif text-amber-900 mb-4">
+                  <h2 className="text-2xl sm:text-4xl font-bold font-serif text-amber-900 mb-4">
                     A Heritage of Kolams
                   </h2>
                   <div className="w-32 h-1 mx-auto bg-gradient-to-r from-amber-400 to-orange-400 rounded-full"></div>
@@ -194,20 +194,20 @@ const Home = () => {
 
                 {/* Rewritten Heritage narrative */}
                 <div className="max-w-4xl mx-auto mb-12">
-                  <p className="text-xl md:text-2xl leading-relaxed text-amber-800 font-medium mb-6">
+                  <p className="text-base sm:text-xl md:text-2xl leading-relaxed text-amber-800 font-medium mb-6">
                     The vibrant art of Kolam is an <span className="text-amber-600 font-bold">ancient cosmic code</span> woven into the very fabric of daily life in South India. 
                   </p>
                   
-                  <p className="text-lg leading-relaxed text-amber-700/90 mb-6 font-serif">
+                  <p className="text-sm sm:text-lg leading-relaxed text-amber-700/90 mb-6 font-serif">
                     For over 5,000 years, women have risen before dawn to transform the earth at their doorsteps into breathtaking geometric tapestries. Mentioned in grand epics like the Ramayana and ancient Vedic scriptures, this is not just art—it is a sacred invitation to <span className="font-bold text-amber-900">Lakshmi, the goddess of prosperity and wealth</span>.
                   </p>
 
-                  <p className="text-lg leading-relaxed text-amber-700/90 mb-6 font-serif">
+                  <p className="text-sm sm:text-lg leading-relaxed text-amber-700/90 mb-6 font-serif">
                     Every curve and dot in a Kolam carries profound mathematical symmetry and ecological wisdom. Traditionally drawn with coarse rice flour, these intricate patterns serve as a humble morning feast for ants, birds, and tiny creatures, symbolizing a beautiful and unspoken coexistence with nature.
                   </p>
 
-                  <div className="mt-10 px-8 py-6 border-l-4 border-r-4 border-amber-400 bg-amber-500/5 rounded-2xl shadow-inner">
-                    <p className="text-xl leading-relaxed text-amber-900 font-serif italic text-center">
+                  <div className="mt-6 sm:mt-10 px-4 sm:px-8 py-4 sm:py-6 border-l-4 border-r-4 border-amber-400 bg-amber-500/5 rounded-2xl shadow-inner">
+                    <p className="text-sm sm:text-xl leading-relaxed text-amber-900 font-serif italic text-center">
                       "Passed down purely through the hands of mothers and daughters over countless generations, Kolam remains one of the world's oldest surviving forms of generative art. It is a daily meditation, a whispered prayer in dust, and a mesmerizing testament to the harmony of the universe."
                     </p>
                   </div>
