@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, Image as ImageIcon } from 'lucide-react';
 import Background from './Background';
+import { assetUrl } from '../utils';
 import { Header } from './header';
 import { Footer } from './footer';
 import kolamDataJson from '../data/gallery-data.json';
@@ -43,7 +44,7 @@ const KolamCard: React.FC<KolamCardProps> = ({ type, imageUrl, index, href = '#'
           {/* Image Background */}
           <div className="absolute inset-0 overflow-hidden">
             <img 
-              src={imageUrl}
+              src={assetUrl(imageUrl)}
               alt={type}
               className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:delay-1000"
               loading="lazy"

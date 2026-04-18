@@ -5,6 +5,7 @@ import { ArrowLeft, Image as ImageIcon, X, ZoomIn } from 'lucide-react';
 import Background from './Background';
 import { Header } from './header';
 import { Footer } from './footer';
+import { assetUrl } from '../utils';
 
 import classImagesDataJSON from '../data/class-images.json';
 const classImagesMap: Record<string, string[]> = (classImagesDataJSON as any).default || classImagesDataJSON;
@@ -101,7 +102,7 @@ const ClassGallery: React.FC = () => {
                     >
                       <div className="relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden bg-amber-100/50 shadow-md border border-transparent transition-all duration-500 group-hover:border-amber-400/50 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:-translate-y-1">
                         <img 
-                          src={src} 
+                          src={assetUrl(src)} 
                           alt={`${formattedTitle} ${idx + 1}`}
                           loading="lazy"
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -185,7 +186,7 @@ const ClassGallery: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img 
-                src={selectedImage} 
+                src={assetUrl(selectedImage)} 
                 alt="Fullscreen view" 
                 className="max-w-full max-h-full w-full h-full object-contain drop-shadow-2xl"
               />
