@@ -2,7 +2,14 @@
 
 **A hybrid AI-powered Kolam classification and design platform — SIH Finalist Project**
 
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-blue)](https://omkar-prabhu-github.github.io/AparnaBindu-v2/)
+[![Model API](https://img.shields.io/badge/🤗_Model_API-Hugging_Face-yellow)](https://huggingface.co/spaces/omkarshanbhag/AparnaBindu-v2)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/omkar-prabhu-github/AparnaBindu-v2)
+
 Aparna Bindu is a full-stack application that preserves and celebrates the ancient South Indian art of **Kolam** (rangoli) through deep learning classification and interactive design tools. This is **Version 2**, featuring a fully functional CNN-ViT hybrid classification backend and a premium redesigned frontend.
+
+> 🌐 **Live Site:** [omkar-prabhu-github.github.io/AparnaBindu-v2](https://omkar-prabhu-github.github.io/AparnaBindu-v2/)  
+> 🤗 **Model API:** [huggingface.co/spaces/omkarshanbhag/AparnaBindu-v2](https://huggingface.co/spaces/omkarshanbhag/AparnaBindu-v2)
 
 ---
 
@@ -59,7 +66,7 @@ Our hybrid architecture and polished UI earned us a spot as **SIH Finalists**, c
 | **React Router v7** | Client-side routing |
 | **Lucide React** | Icon library |
 
-### Backend
+### Backend & Deployment
 | Technology | Purpose |
 |-----------|---------|
 | **Python** | ML model & API server |
@@ -68,6 +75,9 @@ Our hybrid architecture and polished UI earned us a spot as **SIH Finalists**, c
 | **FastAPI** | REST API server |
 | **Uvicorn** | ASGI server |
 | **Pillow** | Image preprocessing |
+| **Hugging Face Spaces** | Cloud hosting for ML model API |
+| **GitHub Pages** | Static frontend hosting |
+| **Docker** | Containerized backend deployment |
 
 ---
 
@@ -167,8 +177,12 @@ AparnaBindu-v2/
 │   ├── predict_single_image.py # Single image inference pipeline
 │   ├── prepocesses.py          # Data preprocessing utilities
 │   ├── server.py               # FastAPI classification server
+│   ├── Dockerfile             # HF Spaces container config
 │   ├── requirements.txt        # Python dependencies
 │   └── kolam_convnext_vit_best(early).pth  # Trained model weights (~323MB, Git LFS)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Pages auto-deployment
 ├── package.json
 ├── vite.config.ts
 ├── tsconfig.json
@@ -194,6 +208,32 @@ AparnaBindu-v2/
 2. **Preprocessing** — Image is resized, normalized, and converted to tensor format
 3. **Hybrid Inference** — CNN extracts fine geometric details; ViT captures global pattern topology
 4. **Result Delivery** — Predicted class and confidence score returned to the frontend
+
+---
+
+## ☁️ Deployment
+
+This project uses a **split deployment** architecture:
+
+| Component | Platform | URL |
+|-----------|----------|-----|
+| **Frontend** | GitHub Pages | [omkar-prabhu-github.github.io/AparnaBindu-v2](https://omkar-prabhu-github.github.io/AparnaBindu-v2/) |
+| **ML Backend** | Hugging Face Spaces | [huggingface.co/spaces/omkarshanbhag/AparnaBindu-v2](https://huggingface.co/spaces/omkarshanbhag/AparnaBindu-v2) |
+
+### Why split deployment?
+- **GitHub Pages** excels at serving static content (React app + 2800 images) for free
+- **Hugging Face Spaces** provides free GPU/CPU hosting optimized for ML models with Docker support
+- The frontend automatically calls the HF Space API in production and `localhost:8000` during development
+
+### How it works
+```
+┌──────────────────────┐         ┌──────────────────────────┐
+│   GitHub Pages       │  POST   │   Hugging Face Spaces    │
+│   (React Frontend)   │ ──────▶ │   (FastAPI + PyTorch)    │
+│                      │ ◀────── │   Docker Container       │
+│   Gallery, Designer  │  JSON   │   CNN-ViT Hybrid Model   │
+└──────────────────────┘         └──────────────────────────┘
+```
 
 ---
 
