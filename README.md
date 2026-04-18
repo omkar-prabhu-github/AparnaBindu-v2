@@ -32,12 +32,6 @@ Aparna Bindu is a full-stack application that preserves and celebrates the ancie
 - Lightbox zoom viewer with subtle backdrop blur
 - Responsive masonry-style grid layout
 
-### 🏗️ Premium UI/UX
-- Traditional amber/orange theme with glassmorphism effects
-- Smooth `framer-motion` animations throughout
-- Fully responsive across mobile, tablet, and desktop
-- Pinned footer with consistent layout structure
-
 ---
 
 ## 🏆 Our SIH Journey
@@ -48,8 +42,6 @@ This project was built for the **Smart India Hackathon (SIH)**. Here's our journ
 |-------|-------|----------|---------|
 | **v1.0** | CNN Only | 80% | Standard Convolutional Neural Network for baseline classification |
 | **v2.0** | CNN-ViT Hybrid | 88% | CNN extracts local geometric features, Vision Transformer (ViT) captures global topology and symmetry |
-
-Our hybrid architecture and polished UI earned us a spot as **SIH Finalists**, competing against brilliant teams across the nation.
 
 ---
 
@@ -127,12 +119,6 @@ python server.py
 
 The backend will start at `http://localhost:8000`
 
-### 5. Use the app
-- Open `http://localhost:5173` in your browser
-- Navigate to **Classify Kolam** to upload and classify images
-- Navigate to **Design a Kolam** to create patterns
-- Browse the **Gallery** for 2800+ curated designs
-
 ---
 
 ## 📁 Project Structure
@@ -194,10 +180,10 @@ AparnaBindu-v2/
 ## 🏛️ Architecture
 
 ```
-┌─────────────────┐     ┌──────────────────────┐     ┌─────────────────┐
-│   React Frontend │────▶│   FastAPI Backend     │────▶│  PyTorch Model  │
-│   (Vite + TS)   │◀────│   (Uvicorn @ :8000)  │◀────│  CNN-ViT Hybrid │
-└─────────────────┘     └──────────────────────┘     └─────────────────┘
+┌──────────────────┐      ┌──────────────────────┐     ┌─────────────────┐
+│   React Frontend │────▶│   FastAPI Backend    │────▶│  PyTorch Model  │
+│   (Vite + TS)    │◀────│   (Uvicorn @ :8000)  │◀────│  CNN-ViT Hybrid │
+└──────────────────┘    , └──────────────────────┘     └─────────────────┘
         │                        │                          │
    Gallery / Designer     Image Upload /              ConvNeXt (local)
    Classify UI            Preprocessing               + ViT (global)
