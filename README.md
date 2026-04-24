@@ -18,7 +18,7 @@ Aparna Bindu is a full-stack application that preserves and celebrates the ancie
 ### 🧠 AI Classification Engine
 - Upload any Kolam image and get instant classification
 - **CNN-ViT Hybrid Model** achieving **88% accuracy** (up from 80% in v1's CNN-only approach)
-- Classifies across 13 traditional Kolam categories: Butterfly, Cow, Creeper, Elephant, Fish, Flower, Footprint, Geometric, Kambi, Loops, Om, Peacock, and more
+- Classifies across 12 traditional Kolam categories: Butterfly, Cow, Creeper, Elephant, Fish, Flower, Footprint, Geometric, Kambi, Loops, Om and Peacock
 - Real-time inference via FastAPI backend
 
 ### 🎨 Interactive Kolam Designer
